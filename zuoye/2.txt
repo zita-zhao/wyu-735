@@ -1,0 +1,85 @@
+1）定义一个交通工具Vehicle类，类中包含：
+属性：速度(speed)、体积(size)
+方法：加速speedUp(), 减速speedDown()，方法中控制台输出字符串“加速”/“减速”即可
+package com.addplus.server.api.service.web.commonmodule.com;
+
+public class Vehicle {
+    public Integer speed;
+    public Integer size;
+    public void speedUp(){
+        System.out.println("加速");
+    }
+    public void speedDown(){
+        System.out.println("减速");
+    }
+}
+
+2）编写测试类Main, main方法中实例化Vehicle对象，为所有属性赋值并输出，最后调用加速，减速方法。
+
+package com.addplus.server.api.service.web.commonmodule.com.test;
+import com.addplus.server.api.service.web.commonmodule.com.Vehicle;
+public class Main {
+    public static void main(String[] args) {
+        Vehicle vehicle = new Vehicle();
+        vehicle.size = 20;
+        vehicle.speed = 30;
+        vehicle.speedDown();
+        vehicle.speedUp();
+    }
+
+}
+
+
+【作业三】
+考察知识点：封装数据（getter 和setter方法），包的使用
+
+
+要求： 
+1)	定义一个手机Phone类（放在com.homework包下）,类中有如下私有属性，屏幕尺寸（screenSzie），配牌（brand），处理器(cpu)，内存（memory），并提供所有成员的getXXX()和setXXX()方法。
+
+package com.addplus.server.api.service.web.commonmodule.com.homework;
+
+public class Phone {
+    /*屏幕尺寸*/
+    private Integer screenSzie;
+    /*配牌*/
+    private String brand;
+    /*处理器*/
+    private String cpu;
+    /*内存*/
+    private String memory;
+
+    public Integer getScreenSzie() {
+        return screenSzie;}
+    public void setScreenSzie(Integer screenSzie) {
+        this.screenSzie = screenSzie;}
+    public String getBrand() {
+        return brand;}
+    public void setBrand(String brand) {
+        this.brand = brand;}
+    public String getCpu() {
+        return cpu;}
+    public void setCpu(String cpu) {
+        this.cpu = cpu;}
+    public String getMemory() {
+        return memory;}
+    public void setMemory(String memory) {
+        this.memory = memory;
+    }
+}
+
+2)	编写测试类Main（放在com.test包下）,在main方法创建Phone类的实例，为所有成员变量赋值，并且控制台输出所有值。
+package com.addplus.server.api.service.web.commonmodule.com.test;
+import com.addplus.server.api.service.web.commonmodule.com.homework.Phone;
+
+public class Main {
+    public static void main(String[] args) {
+        Phone phone = new Phone();
+        phone.setBrand("华为");
+        phone.setCpu("I7");
+        phone.setMemory("8G");
+        phone.setScreenSzie(15);
+        System.out.println("品牌：" + phone.getBrand() + "  Cpu:" + phone.getCpu() + "  Memory: " + phone.getMemory() + "  ScreenSzie:" + phone.getScreenSzie());
+    }
+
+}
